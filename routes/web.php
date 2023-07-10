@@ -17,6 +17,17 @@ use App\Http\Controllers\MainController;
 
 Route::get('/', [MainController::class, 'home'])->name('home');
 
+Route::get('/houses', [MainController::class, 'houses']);
+
+Route::get('/houses/{slug}', [MainController::class, 'house']);
+
+Route::get('/mainnews', [MainController::class, 'mainnews']);
+
+Route::get('/mainnews/{slug}', [MainController::class, 'mainnew']);
+
+
+Route::get('/politika-konfidencialnosti', [MainController::class, 'politika_konfidencialnosti']);
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
